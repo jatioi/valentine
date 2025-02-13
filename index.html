@@ -3,11 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>My Website</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <img src="img/flower.jpg" alt="Flower">
-    </div>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><button class="nav-btn" onclick="showSection('cat')">Valentine Cat</button></li>
+            <!-- <li><button class="nav-btn" onclick="showSection('snoopy')">Open</button></li>
+            <li><button class="nav-btn" onclick="showSection('flower')">Flower</button></li> -->
+        </ul>
+    </nav>
+
+    <section id="cat" class="section active">
+        <h1>Hi Lina! Meet Your Valentine Cat! </h1>
+        <div class="cat-container">
+            <img src="img/Click-me.png" alt="Click Me" class="click-sign-img">
+            <div class="cat" onclick="catSpeak()">
+                <div class="ear ear-left"></div>
+                <div class="ear ear-right"></div>
+                <div class="eye eye-left"></div>
+                <div class="eye eye-right"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="speech-bubble" id="catSpeech">
+                Click me for a Valentine's surprise! 💝
+            </div>
+        </div>
+
+        <div class="valentine-popup" id="valentine-popup">
+            <h1>Happy Hearts Day! </h1>
+            <h2 class="popup-letter"> You deserve all the good love and kindess in the world</h2>
+            <p>Here's a special flower just for you!</p>
+            <div>            
+                <img src="/img/flower.png" alt="flower" class="flower">
+            </div>
+            <div>
+                <button class="close-button" onclick="closePopup()">Thank you! ❤️</button>
+            </div>
+          </div>
+
+    </section>
+
+    <section id="snoopy" class="section">
+        <h1>💌 Happy Valentine’s Precious! 💌</h1>
+        
+        <div class="wrapper" onclick="openEnvelope()">
+            <div class="lid one"></div>
+            <div class="lid two"></div>
+            <div class="envelope">
+                <div class="letter">
+                    <h1>Happy Valentine’s Day!</h1>
+                    <p>Where to go?</p>
+                    <div id="options" class="hidden">
+                        <button onclick="chooseOption('boulder')">🧗‍♂️ Boulder</button>
+                        <button onclick="chooseOption('cuddle')">🥰 Cuddle</button>
+                        <button onclick="chooseOption('eatout')">🍽️ Eat Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="vietnamese" class="hidden">
+            <p>Vietnamese food? 🍜</p>
+            <button onclick="showRecommendation()">Recommend a place</button>
+        </div>
+    
+        <div id="recommendation" class="hidden">
+            <h2>Where do you recommend? 🤔</h2>
+            <input type="text" id="recommend-input" placeholder="Type here...">
+        </div>
+    
+        <div id="availability" class="hidden">
+            <p>When are you available? 📅</p>
+            <button onclick="showScreenshotMessage()">Confirm</button>
+        </div>
+    
+        <div id="screenshot" class="hidden">
+            <p>Okay! Screenshot this proof and send it to our iMessage ❤️</p>
+        </div>
+    </section>
+    
+
+    <section id="flower" class="section">
+        <h1>Magic Valentine Flower! 🌸</h1>
+        <div class="flower-container">
+            <div class="flower">
+                <div class="flower-center">
+                    <div class="petal" style="transform: rotate(0deg)"></div>
+                    <div class="petal" style="transform: rotate(45deg)"></div>
+                    <div class="petal" style="transform: rotate(90deg)"></div>
+                    <div class="petal" style="transform: rotate(135deg)"></div>
+                    <div class="petal" style="transform: rotate(180deg)"></div>
+                    <div class="petal" style="transform: rotate(225deg)"></div>
+                    <div class="petal" style="transform: rotate(270deg)"></div>
+                    <div class="petal" style="transform: rotate(315deg)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
