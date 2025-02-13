@@ -1,0 +1,456 @@
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe6e6, #ffb3b3);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: #ff4d4d;
+    margin-bottom: 2rem;
+    animation: bounce 2s infinite;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Navigation */
+.nav {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background: #ff4d4d;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Main content sections */
+.section {
+  min-height: 100vh;
+  display: none;
+  padding: 6rem 2rem 2rem;
+  animation: fadeIn 0.5s;
+}
+
+.section.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cat section */
+.cat-container {
+  position: relative;
+  margin: 2rem;
+}
+
+.cat {
+  width: 150px;
+  height: 120px;
+  background: #808080;
+  border-radius: 50% 50% 40% 40%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.cat:hover {
+  transform: scale(1.1);
+}
+
+
+.click-sign-img {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Adjust size */
+    animation: bounce 1.5s infinite;
+}
+
+
+.wrapper {
+    height: 200px;
+    width: 300px;
+    background-color: #3760C9;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+  }
+  
+  .lid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-right: 150px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-left: 150px solid transparent;
+    transform-origin: top;
+    transition: transform 0.25s linear;
+  }
+/*   
+  Lid when closed */
+  .lid.one {
+    border-top: 100px solid #658ced;
+    transform: rotateX(0deg);
+    z-index: 3;
+    transition-delay: 1s;
+  }
+  
+  /* Lid when opened */
+  .lid.two {
+    border-top: 100px solid #3760C9;
+    transform: rotateX(90deg);
+    z-index: 1;
+    transition-delay: 0.75s;
+  }
+  
+  .envelope {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top: 100px solid transparent;
+    border-right: 150px solid #C4DFF0;
+    border-bottom: 100px solid #C4DFF0;
+    border-left: 150px solid #a4d4f2;
+    z-index: 3;
+  } */
+  
+  .letter {
+    position: absolute;
+    top: 0;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 2;
+    transition: 0.5s;
+    text-align: center;
+  }
+  
+  .letter h1 {
+    font-size: 30px;
+    margin-top: 10px;
+    color: #3B4049;
+    align-content: center;
+    text-align:center;
+    text-justify: auto;
+    color: rgb(54, 7, 67);
+    font-family: monospace;
+  }
+  
+  .letter p {
+    margin-top: 10px;
+    border: #3B4049;
+    color: rgb(23, 113, 193);
+    align-content: center;
+    text-align:center;
+    text-justify: auto;
+    font-family: monospace;
+  }
+  
+  .letter button {
+    margin-top: 5px;
+    align-content: center;
+    align-items: center;
+    font-family: monospace;
+    align-self: center;
+  }
+  
+  /* Animation for the envelope */
+  .wrapper:hover .lid.one {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+  }
+  
+  .wrapper:hover .lid.two {
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+  }
+  
+  .wrapper:hover .letter {
+    transform: translateY(-50px);
+    transition-delay: 0.5s;
+  }
+  
+  /* Hidden sections */
+  .hidden {
+    display: none;
+  }
+
+  .valentine-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: transform 0.5s;
+    text-align: center;
+  }
+
+  .valentine-popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    position: absolute;
+    align-content: center;
+  }
+
+
+  .flower {
+    position: relative;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    width: 40%;
+    height: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  button {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 1rem;
+    transition: 0.3s;
+    margin-right: 1%;
+  }
+  
+  button:hover {
+    background: #cc0000;
+  }
+  
+  
+.ear {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #808080;
+  position: absolute;
+  top: -25px;
+}
+
+.ear-left {
+  left: 15px;
+  transform: rotate(-30deg);
+}
+
+.ear-right {
+  right: 15px;
+  transform: rotate(30deg);
+}
+
+.eye {
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  animation: blink 4s infinite;
+}
+
+.eye-left { left: 35px; }
+.eye-right { right: 35px; }
+
+.mouth {
+  width: 40px;
+  height: 20px;
+  border-radius: 0 0 20px 20px;
+  background: #ff9999;
+  position: absolute;
+  bottom: 25px;
+  left: 55px;
+  transition: all 0.3s;
+}
+
+/* Snoopy section */
+.snoopy-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 2rem;
+}
+
+.snoopy {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  animation: float 3s infinite ease-in-out;
+}
+
+.snoopy-ear {
+  width: 60px;
+  height: 80px;
+  background: black;
+  position: absolute;
+  border-radius: 30px;
+}
+
+.snoopy-ear-left {
+  left: 40px;
+  top: 30px;
+  transform: rotate(-30deg);
+}
+
+.snoopy-ear-right {
+  right: 40px;
+  top: 30px;
+  transform: rotate(30deg);
+}
+
+/* Flower section */
+.flower-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 2rem;
+}
+
+
+.flower-center {
+  width: 50px;
+  height: 50px;
+  background: #FFD700;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+}
+
+.petal {
+  width: 40px;
+  height: 80px;
+  background: #FF69B4;
+  border-radius: 20px;
+  position: absolute;
+  left: 5px;
+  top: -40px;
+  transform-origin: bottom;
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  color: #ff4d4d;
+  animation: floatHeart 3s infinite;
+  pointer-events: none;
+}
+
+/* Speech bubble */
+.speech-bubble {
+  position: absolute;
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  max-width: 1000px;
+  top: -80px;
+  left: 50%;
+  width: 300px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 10;
+}
+
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: white transparent transparent;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 5rem 1rem 1rem;
+  }
+}
